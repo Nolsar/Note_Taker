@@ -3,9 +3,9 @@ const path = require("path");
 module.exports = function (app) {
 
     // Testing route
-    app.get("/", function (req, res) {
-        res.send("Testing...");
-    });
+    // app.get("/", function (req, res) {
+    //     res.send("Testing...");
+    // });
 
     //   * GET `/notes` - Should return the `notes.html` file.
     app.get("/notes", function (req, res) {
@@ -17,3 +17,5 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 };
+
+
