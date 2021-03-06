@@ -1,33 +1,17 @@
-// Tells node that we are creating an "express" server
+//DEPENDENCIES
 const express = require ('express');
 
-
-// Sets an initial port. We"ll use this later in our listener
+// Sets an initial port.
 const PORT = 8080;
 
 const app = express();
 
-// ================================================================================
-// ROUTER
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-// ================================================================================
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// app.get("*", function (req, res) {
-//     res.sendFile(path.join(__dirname, "..Develop\public\index.html"));
-// });
-
-// app.get(`/notes`, function (req, res) {
-//     res.sendFile(path.join(__dirname, "Develop\public\notes.html"));
-// });
-
-
-
-// The following HTML routes should be created:
-
-//   * GET `/notes` - Should return the `notes.html` file.
-
-//   * GET `*` - Should return the `index.html` file
+//ROUTER
+require("./Develop/routes/htmlRoutes")(app);
 
 // * The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
 
