@@ -1,6 +1,6 @@
 //DEPENDENCIES
 const express = require ('express');
-const { connect } = require('node:http2');
+// const { connect } = require('node:http2');
 
 // Sets an initial port.
 const PORT = process.env.PORT || 3000;
