@@ -13,8 +13,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 //ROUTER
-require("./Develop/routes/htmlRoutes")(app);
-require("./Develop/routes/apiRoutes")(app);
+require('./routes/routes')(app);
 
 // Start our server
 app.listen(PORT, () => {
