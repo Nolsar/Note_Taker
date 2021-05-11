@@ -1,82 +1,96 @@
-# Note_Taker
+# Note-Taker
+![MIT License](https://img.shields.io/badge/license-MIT-green)
 
-# Unit 11 Express Homework: Note Taker
+# Description :
 
-## Description
+This is a simple Note Taker application that allows users to add, view saved notes and also delete the notes if the user don't need that note anymore. This application uses an express backend and save and retrieve note data from a JSON file.
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+## Deployed Application :
+[Note Taker](https://nolsar-note-taker.herokuapp.com/)
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
+# Table of Contents
+* [Technology](#technology)
+* [Usage](#usage)
+* [Features](#features)
+* [License](#license)
+* [Contribution](#contribution)
+* [Questions](#questions)
 
-* The following HTML routes should be created:
+# User Story
 
-  * GET `/notes` - Should return the `notes.html` file.
+```
+AS A user, I want to be able to write and save notes.
 
-  * GET `*` - Should return the `index.html` file
-
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
-
-* The following API routes should be created:
-
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
-
-  * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
-
-  * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
-
-## User Story
-
-AS A user, I want to be able to write and save notes
-
-I WANT to be able to delete notes I've written before
+I WANT to be able to delete notes I've written before.
 
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
+```
 
-## Business Context
+# Business Context
 
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
+* For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. 
 
-## Acceptance Criteria
+* Being able to take persistent notes allows users to have written information available when needed.
 
-Application should allow users to create and save notes.
 
-Application should allow users to view previously saved notes.
+# Application Preview : 
 
-Application should allow users to delete previously saved notes.
+|Main Page|Saved Notes|Delete Note
+|--|--|--
+|![Main Page](public/assets/images/homepage.jpg)|![Saved Notes](public\assets\images\saveScreen.jpg)|![Delete Note](public\assets\images\deleteNote.jpg)
 
-## Deploying the App
+# Technology :
 
-You will not be able to deploy your server side code on GitHub pages. This app should be deployed on Heroku. Carefully follow the [Heroku Guide](../04-Important/HerokuGuide.md) for getting your app deployed on Heroku.
+**1. [Express.js](https://expressjs.com/)** :
 
-- - -
+* Web Applications : Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
-## Commit Early and Often
+* APIs : With a myriad of HTTP utility methods and middleware, creating a robust API is quick and easy.
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+* Performance : Express provides a thin layer of fundamental web application features, without obscuring Node.js features.
 
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
+**2. [Node.js](https://nodejs.org/en/)** : 
 
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
+* Node.js is an open-source and cross-platform JavaScript runtime environment. 
 
-Follow these guidelines for committing:
+* A Node.js app is run in a single process, without creating a new thread for every request. 
 
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
+* Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking.
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
+**3. [uuid](https://www.npmjs.com/package/uuid)** : Creates random unique id's.
 
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
+# Usage :
 
-* Test your application before you commit to ensure functionality at every step in the development process.
+* Clone this repository to use this application on local machine.
 
-We would like you to have well over 200 commits by graduation, so commit early and often!
+* To install necessary dependencies, run the following command :
 
-## Submission on BCS
+```
+npm i
+```
 
-You are required to submit the following:
+* The application will be invoked with the following command: This will start localhost server on PORT 3000.
 
-* The URL of the deployed application. This should be the link to the url provided by Heroku. Be sure not to submit a link to the Heroku dashboard.
+```
+node server.js
+```
 
-* The URL of the GitHub repository
+* Open browser and type `http://localhost:3000/` to run this application on your local machine.
 
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+# Features :
+
+1. Used 'Express.js' to build server
+
+2. Used 'fs(File System)' module to read and write from 'db.json' file.
+
+3. Used [uuid](https://www.npmjs.com/package/uuid) npm package to give unique id to each note.
+
+4. Application is deployed on [heroku](https://www.heroku.com/) : Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps.
+
+# License
+
+This project is licensed under MIT license.
+
+# Contribution
+
+Pull requests are always welcome!

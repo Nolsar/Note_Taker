@@ -12,7 +12,10 @@ module.exports = app => {
 
         // API ROUTES
         // ========================================================
-    
+        app.get("/", function(req, res) {
+            res.json(path.join(__dirname, "public/index.html"));
+          });
+
         // Setup the /api/notes get route
         app.get("/api/notes", function(req, res) {
             // Read the db.json file and return all saved notes as JSON.
